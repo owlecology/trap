@@ -3,10 +3,15 @@ This repository provides the code and installation instructions neccesary for th
 
 The code has been confirmed to work on a Raspberry Pi 4, but will likely work on other versions of RPi too.
 
+## Setup
+
+Download and install the latest Raspberry OS from https://www.raspberrypi.org/software/operating-systems/
+
+
+
 
 ## Installation
 
-Download and install the latest Raspberry OS from https://www.raspberrypi.org/software/operating-systems/
 
 Make sure that your RPi is updated 
 ```bash
