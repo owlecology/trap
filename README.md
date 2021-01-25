@@ -14,3 +14,16 @@ sudo apt-get update
 sudo apt full-upgrade
 ```
 
+
+
+Copy Owltrap_Pi4.py to your RPi and update the code with your Gateway API information as indicated in the file. 
+
+
+Make sure Owltrap_Pi4.py starts when the RPi starts, this can be done in various ways, here we edit .bashrc to start the script when your RPi starts
+
+```bash
+sudo apt install screen
+sudo nano /home/pi/.bashrc
+screen -d -m XXXXXXXXXXX
+```
+
