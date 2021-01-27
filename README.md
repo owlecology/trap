@@ -5,8 +5,8 @@ The code has been confirmed to work on a Raspberry Pi 4, but will likely work on
 
 ## Setup
 
-Download and install the latest Raspberry OS from https://www.raspberrypi.org/software/operating-systems/
-
+Download the latest Raspberry OS from https://www.raspberrypi.org/software/operating-systems/ and install it on your micro SD-card.
+If you are not used to working with RPI's it's easiest to Raspberry Pi Imager and to chose a OS version with desktop. Once your SD card is ready, insert it in your RPi, connect the RPi to a screen, keyboard and mouse and power it up. Go through the guide and set up your Pi. 
 
 
 
@@ -29,4 +29,32 @@ Make sure Owltrap_Pi4.py starts when the RPi starts, this can be done in various
 ```bash
 sudo nano /home/pi/.bashrc
 ```
+The trap script will now start and run in the background whenever the RPi is starting. 
+
+For the texting to work your RPi needs to be able to connect to your mobile broadband. You can add the mobile broadband WiFi by editing wpa_supplicant.conf
+
+```bash
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+```
+
+update the details to your WiFi settings
+
+```bash
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+    ssid="Network1"
+    psk="password1"
+    id_str="Network1"
+}
+
+network={
+    ssid="Network2"
+    psk="password2"
+    id_str="Network2"
+}
+```
+
+You are now ready to go!
 
