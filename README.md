@@ -6,25 +6,26 @@ The code has been confirmed to work on a Raspberry Pi 4, but will likely work on
 ## Setup
 
 Download the latest Raspberry OS from https://www.raspberrypi.org/software/operating-systems/ and install it on your micro SD-card.
-If you are not used to working with RPI's it's easiest to Raspberry Pi Imager and to chose a OS version with desktop. Once your SD card is ready, insert it in your RPi, connect the RPi to a screen, keyboard and mouse and power it up. Go through the guide and set up your Pi. 
+If you are not used to working with RPI's it's easiest to Raspberry Pi Imager and to chose a OS version with desktop. Once your SD card is ready, insert it in your RPi, connect the RPi to a screen, keyboard and mouse and power it up. Go through the guide and set up your Pi. Make sure that SSH is enabled. 
+
+Once the basic setup is completet, it is easiest to connect to your RPi via SSH. You can read more about to do this here: https://www.raspberrypi.org/documentation/remote-access/ssh/
 
 
-
-## Installation
-
-
-Make sure that your RPi is updated 
+Make sure that your RPi is updated by using these commands 
 ```bash
 sudo apt-get update
 sudo apt full-upgrade
 ```
 
+## Installation
 
+Copy Owltrap_Pi4.py to your RPi and update the code with your Gateway API information as indicated in the file. The easiest way is to create an empty Python script called owltrap.py and then copy the code there 
 
-Copy Owltrap_Pi4.py to your RPi and update the code with your Gateway API information as indicated in the file. 
+```bash
+sudo nano owltrap_Pi4.py
+```
 
-
-Make sure Owltrap_Pi4.py starts when the RPi starts, this can be done in various ways, here we edit rc.local to start the script when your RPi starts. Open rc.local with e.g. nano and scroll down to the very end. add "sudo python3 /home/pi/owltrap.py &" on the line just above "exit 0"
+Once you created or copied the file, you need to make sure that the trap script starts when the RPi starts. This can be done in various ways, here we edit rc.local to start the script when your RPi starts. Open rc.local with e.g. nano and scroll down to the very end. add "sudo python3 /home/pi/owltrap.py &" on the line just above "exit 0"
 
 ```bash
 sudo nano /home/pi/.bashrc
