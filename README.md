@@ -28,7 +28,7 @@ This copies the OwlTrap code to the folder 'trap' on your RPi. Once you copied t
 sudo nano trap/Owltrap_Pi4.py
 ```
 
-Once you updated the file, you need to make sure that the trap script starts when the RPi starts. This can be done in various ways, here we edit rc.local to start the script when your RPi starts. Open rc.local with e.g. nano and scroll down to the very end. add "sudo python3 /home/pi/owltrap.py &" on the line just above "exit 0"
+Once you updated the file, you need to make sure that the trap script starts when the RPi starts. This can be done in various ways, here we edit rc.local to start the script when your RPi starts. Open rc.local with e.g. nano and scroll down to the very end. add "sudo python3 /home/pi/trap/Owltrap_Pi4.py &" on the line just above "exit 0"
 
 ```bash
 sudo nano /home/pi/.bashrc
