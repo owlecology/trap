@@ -9,8 +9,8 @@ switch = 7                                                    # number indicates
 servo = 12                                                    # number indicates the GPIO pin for the servo PWM signal (12)
 
 ### GatewayAPI settings ###
-key = [gatewayapi key]                                        # replace [gatewayapi key] with your gatewayapi key
-secret = [gatewayapi secret]                                  # replace [gatewayapi secret] with your gatewayapi secret
+key = '[gatewayapi key]'                                        # replace [gatewayapi key] with your gatewayapi key
+secret = '[gatewayapi secret]'                                  # replace [gatewayapi secret] with your gatewayapi secret
 number = [phone number]                                       # replace [phone number] with the number that should receive the text message. Include country code (e.g. 44 for UK)
 
 GPIO.setmode(GPIO.BOARD)
