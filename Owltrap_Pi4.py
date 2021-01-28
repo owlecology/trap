@@ -4,11 +4,11 @@ from requests_oauthlib import OAuth1Session
 import RPi.GPIO as GPIO
 from  time import sleep
 
-button=7                                                                            # number indicates the GPIO pin for the switch (7)
+switch=7                                                                            # number indicates the GPIO pin for the switch (7)
 servo=12                                                                            # number indicates the GPIO pin for the servo PWM signal (12)
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(button, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)                                  
+GPIO.setup(switch, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)                                  
 GPIO.setup(servo,GPIO.OUT)                                                            
 
 GPIO.setwarnings(False)
@@ -23,7 +23,7 @@ gwapi = OAuth1Session(key, client_secret=secret)
 
 def owl(channel):
   while True: 
-      if (GPIO.input(button) == GPIO.HIGH):
+      if (GPIO.input(switch) == GPIO.HIGH):
           p.start(0)
           p.ChangeDutyCycle(5)                                                      # Turns the servo 90deg left 
           sleep(1)                                                                  # Indicates how many seconds before the trap returns to the waiting position
@@ -44,7 +44,7 @@ def owl(channel):
             import sys
             sys.exit()
 
-GPIO.add_event_detect(button,GPIO.FALLING,callback=owl)
+GPIO.add_event_detect(switch,GPIO.FALLING,callback=owl)
 try:
   while True:
      sleep(1)
