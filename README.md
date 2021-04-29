@@ -38,7 +38,7 @@ sudo nano /etc/rc.local
 and add
 
 ```bash
-"sudo python3 /home/pi/trap/Owltrap_Pi4.py &" 
+sudo python3 /home/pi/trap/Owltrap_Pi4.py & 
 ```
 on the line just above "exit 0"
 
