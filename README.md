@@ -30,11 +30,19 @@ Edit the file with this command:
 sudo nano trap/Owltrap_Pi4.py
 ```
 
-Once you updated the file, you need to make sure that the trap script starts when the RPi starts. This can be done in various ways, here we edit rc.local to start the script when your RPi starts. Open rc.local with nano and add "sudo python3 /home/pi/trap/Owltrap_Pi4.py &" on the line just above "exit 0"
+Once you updated the file, you need to make sure that the trap script starts when the RPi starts. This can be done in various ways, here we edit rc.local to start the script when your RPi starts. Open rc.local with nano 
 
 ```bash
 sudo nano /etc/rc.local
 ```
+and add
+
+```bash
+"sudo python3 /home/pi/trap/Owltrap_Pi4.py &" 
+```
+on the line just above "exit 0"
+
+
 
 Your rc.local should now look something like this:
 
