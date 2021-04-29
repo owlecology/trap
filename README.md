@@ -87,13 +87,13 @@ update_config=1
 network={
     ssid="Network1"
     psk="password1"
-    id_str="Network1"
+    key_mgmt=WPA-PSK
 }
 
 network={
     ssid="Network2"
     psk="password2"
-    id_str="Network2"
+    key_mgmt=WPA-PSK
 }
 ```
 Restart your RPi and you are ready to go!
