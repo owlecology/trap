@@ -81,15 +81,13 @@ sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 update the details to your WiFi settings
 
 ```bash
+country=SE
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-
 network={
     ssid="Network1"
     psk="password1"
     key_mgmt=WPA-PSK
 }
-
 network={
     ssid="Network2"
     psk="password2"
